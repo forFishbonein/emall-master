@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.ReceiverMapper">
+
+<!--    <select id="getByReceiverId" resultType="com.emall.entity.Receiver">-->
+<!--        select * from receiver-->
+<!--        <where>-->
+<!--            <if test="receiverId != null and receiverId != ''">-->
+<!--                receiver_id = #{receiverId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    <select id="getByUserId" resultType="com.emall.entity.Receiver">-->
+<!--        select * from receiver-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    <insert id="insertReceiver">-->
+<!--     insert  into receiver (receiver_id,user_id,receiver_name,receiver_tele,receiver_province,receiver_city,receiver_destrict,receiver_details)-->
+<!--     values (#{receiver.receiverId},#{receiver.userId},#{receiver.receiverName},#{receiver.receiverTele},#{receiver.receiverProvince},#{receiver.receiverCity},#{receiver.receiverDestrict},#{receiver.receiverDetails})-->
+<!--    </insert>-->
+
+<!--    <update id="updateReceiver">-->
+<!--        update receiver set-->
+<!--        receiver_name=#{receiver.receiverName},receiver_tele=#{receiver.receiverTele},receiver_province=#{receiver.receiverProvince},receiver_city=#{receiver.receiverCity},receiver_destrict=#{receiver.receiverDestrict},receiver_details=#{receiver.receiverDetails}-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id=#{receiver.userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </update>-->
+
+<!--    <delete id="deleteByReceiverId">-->
+<!--        update receiver set deleted='1'-->
+<!--        <where>-->
+<!--            <if test="receiverId != null and receiverId != ''">-->
+<!--                receiver_id = #{receiverId}-->
+<!--            </if>-->
+
+<!--        </where>-->
+<!--    </delete>-->
+
+</mapper>

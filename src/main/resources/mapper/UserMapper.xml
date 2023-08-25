@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.UserMapper">
+
+<!--    &lt;!&ndash;根据user_id查询user信息&ndash;&gt;-->
+<!--    <select id="getByUserId" resultType="com.emall.entity.User">-->
+<!--        select * from user-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据user_email查询user信息&ndash;&gt;-->
+<!--    <select id="getByUserEmail" resultType="com.emall.entity.User">-->
+<!--        select * from user-->
+<!--        <where>-->
+<!--            <if test="userEmail != null and userEmail != ''">-->
+<!--                user_email = #{userEmail}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据user_name查询user信息&ndash;&gt;-->
+<!--    <select id="getByUserName" resultType="com.emall.entity.User">-->
+<!--        select * from user-->
+<!--        <where>-->
+<!--            <if test="userName != null and userName != ''">-->
+<!--                user_name = #{userName}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+
+<!--    &lt;!&ndash;插入user信息&ndash;&gt;-->
+<!--    <insert id="insertUser" parameterType="com.emall.entity.User">-->
+<!--        insert into user (user_id,user_email,user_pass,user_name,user_tele,user_regdate)-->
+<!--        values (#{userId},#{userEmail},#{userPass},#{userName},#{userTele},#{userRegdate})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash;根据user_id修改user信息&ndash;&gt;-->
+<!--    <update id="updateUser" parameterType="com.emall.entity.User">-->
+<!--        update user set-->
+<!--        user_email=#{user.userEmail},user_pass=#{user.userPass},user_name=#{user.userName},user_tele=#{user.userTele},user_regdate=#{user.userRegdate}-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id=#{user.userId}-->
+<!--            </if>-->
+<!--        </where>-->
+
+<!--    </update>-->
+
+<!--    &lt;!&ndash;根据user_id删除user信息&ndash;&gt;-->
+<!--    <delete id="deleteByUserId" parameterType="com.emall.entity.User">-->
+<!--        update user set deleted='1'-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{userId}-->
+<!--            </if>-->
+
+<!--        </where>-->
+<!--    </delete>-->
+
+
+<!--    &lt;!&ndash;  查询所有信息  &ndash;&gt;-->
+<!--    <select id="getAllUser" resultType="com.emall.entity.User">-->
+<!--        select * from `user`-->
+<!--    </select>-->
+
+    <select id="getNameById" resultType="java.lang.String">
+        select user_name from `user` where user_id = #{userId}
+    </select>
+
+</mapper>
+

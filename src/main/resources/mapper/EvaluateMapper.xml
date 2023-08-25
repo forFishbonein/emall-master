@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.EvaluateMapper">
+<!--    <update id="deleteByUserId" >-->
+<!--        update evaluate-->
+<!--        <set>-->
+<!--            <if test="deleted != 0 and productId != null and productId = ''">-->
+<!--                deleted = '1'-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <where>-->
+<!--            product_id = #{UserId}-->
+<!--        </where>-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash;根据evaluate_id查询evaluate信息&ndash;&gt;-->
+<!--    <select id="getByEvaluateId" resultType="com.emall.entity.Evaluate">-->
+<!--        select * from evaluate-->
+<!--        <where>-->
+<!--            <if test="evaluateId != null and evaluateId != ''">-->
+<!--                evaluate_id = #{evaluateId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据user_id查询evaluate信息&ndash;&gt;-->
+<!--    <select id="getByUserId" resultType="com.emall.entity.Evaluate">-->
+<!--        select * from evaluate-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据product_id查询evaluate信息&ndash;&gt;-->
+<!--    <select id="getByProductId" resultType="com.emall.entity.Evaluate">-->
+<!--        select * from evaluate-->
+<!--        <where>-->
+<!--            <if test="productId != null and productId != ''">-->
+<!--                product_id = #{productId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;插入evaluate信息&ndash;&gt;-->
+<!--    <insert id="insertEvaluate">-->
+<!--        insert into evaluate (evaluate_id,user_id,product_id,evaluate_level,evaluate_content,evaluate_date)-->
+<!--        values (#{evaluate.evaluateId},#{evaluate.userId},#{evaluate.productId},#{evaluate.evaluateLevel},#{evaluate.evaluateContent},#{evaluate.evaluateDate})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash;根据evaluate_id修改evaluate信息&ndash;&gt;-->
+<!--    <update id="updateByEvaluatetId">-->
+<!--        update evaluate set-->
+<!--        evaluate_level = #{evaluate.evaluateLevel},evaluate_content=#{evaluate.evaluateContent}-->
+<!--        <where>-->
+<!--            <if test="evaluateId != null and evaluateId != ''">-->
+<!--                evaluate_id = #evaluate.evaluateId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash;根据evaluate_id删除evaluate信息&ndash;&gt;-->
+<!--    <update id="deleteByEvaluateId" >-->
+<!--        update evaluate-->
+<!--        <set>-->
+<!--            <if test="deleted != 0 and evaluateId != null and evaluateId = ''">-->
+<!--                deleted = '1'-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <where>-->
+<!--            evaluate_id = #{evaluateId}-->
+<!--        </where>-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash;查询所有&ndash;&gt;-->
+<!--    <select id="getAllEvaluate" resultType="com.emall.entity.Evaluate">-->
+<!--        select * from evaluate-->
+<!--    </select>-->
+<!--    <select id="getAllByUserId" resultType="com.emall.entity.Evaluate">-->
+<!--        select * from evaluate-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+    <select id="getGoodEvaluateById" resultType="com.emall.entity.Evaluate">
+        select evaluate_content,evaluate_date,evaluate_level,user_id from evaluate where product_id = #{productId}
+        order by evaluate_level desc LIMIT 2
+    </select>
+
+    <select id="getAvgLevel" resultType="com.emall.entity.Evaluate">
+        select avg(evaluate_level) where product_id = #{productId}
+    </select>
+
+
+</mapper>

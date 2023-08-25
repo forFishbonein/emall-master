@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.AdminMapper">
+
+<!--     &lt;!&ndash;根据admin_id查询admin信息&ndash;&gt;-->
+<!--     <select id="getByAdminId" resultType="com.emall.entity.Admin">-->
+<!--      select * from admin-->
+<!--         <where>-->
+<!--             <if test="adminId != null and adminId != ''">-->
+<!--                 admin_id = #{adminId}-->
+<!--             </if>-->
+<!--         </where>-->
+<!--     </select>-->
+
+<!--    &lt;!&ndash;根据admin_email查询admin信息&ndash;&gt;-->
+<!--    <select id="getByAdminEmail" resultType="com.emall.entity.Admin">-->
+<!--     select * from admin-->
+<!--        <where>-->
+<!--            <if test="adminEmail != null and adminEmail != ''">-->
+<!--                admin_email = #{adminEmail}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据admin_name查询admin信息&ndash;&gt;-->
+<!--    <select id="getByAdminName" resultType="com.emall.entity.Admin">-->
+<!--        select * from admin-->
+<!--        <where>-->
+<!--            <if test="adminName != null and adminName != ''">-->
+<!--                admin_name = #{adminName}-->
+
+<!--           </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;得到所有的admin的列表&ndash;&gt;-->
+<!--    <select id="getAllAdmin" resultType="com.emall.entity.Admin">-->
+<!--        select * from admin-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;插入admin信息&ndash;&gt;-->
+<!--    <insert id="insertAdmin" parameterType="com.emall.entity.Admin">-->
+<!--       insert into admin (admin_id,admin_email,admin_pass,admin_name,admin_regdate)-->
+<!--       values (#{adminId},#{adminEmail},#{adminPass},#{adminName},#{adminRegdate})-->
+<!--    </insert>-->
+
+<!--   &lt;!&ndash;根据adminid修改admin信息&ndash;&gt;-->
+<!--    <update id="updateAdmin" parameterType="com.emall.entity.Admin">-->
+<!--        update admin set-->
+<!--        admin_email=#{admin.adminEmail},admin_pass=#{admin.adminPass},admin_name=#{admin.adminName},admin_regdate=#{admin.adminRegdate}-->
+<!--        <where>-->
+<!--            <if test="adminId != null and adminId != ''">-->
+<!--                admin_id=#{admin.adminId}-->
+<!--            </if>-->
+<!--        </where>-->
+
+<!--    </update>-->
+
+<!--    &lt;!&ndash;根据admin_id删除admin信息&ndash;&gt;-->
+<!--    <delete id="deleteByAdminId" parameterType="com.emall.entity.Admin">-->
+<!--        update admin set deleted='1'-->
+<!--        <where>-->
+<!--            <if test="adminId != null and adminId != ''">-->
+<!--                admin_id = #{adminId}-->
+<!--            </if>-->
+
+<!--        </where>-->
+<!--    </delete>-->
+
+
+</mapper>

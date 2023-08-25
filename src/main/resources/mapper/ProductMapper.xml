@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.ProductMapper">
+
+<!--    &lt;!&ndash;根据product_id获取product信息&ndash;&gt;-->
+<!--    <select id="getByProductId" resultType="com.emall.entity.Product">-->
+<!--        select * from product-->
+<!--        <where>-->
+<!--            <if test="productId != null and productId != ''">-->
+<!--                product_id = #{productId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+
+<!--    &lt;!&ndash;根据product_name获取product信息&ndash;&gt;-->
+<!--    <select id="getByProductName" resultType="com.emall.entity.Product">-->
+<!--        select * from product-->
+<!--        <where>-->
+<!--            <if test="productName != null and productName != ''">-->
+<!--                product_name = #{productName}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+
+<!--    &lt;!&ndash;插入product信息&ndash;&gt;-->
+<!--    <insert id="insertProduct" parameterType="com.emall.entity.Product">-->
+<!--        insert into product (product_id,product_name,product_count,product_price,product_img,product_details)-->
+<!--        values (#{productId},#{productName},#{productCount},#{productPrice},#{productImg},#{productDetails})-->
+<!--    </insert>-->
+
+
+<!--    &lt;!&ndash;根据product_id删除product信息&ndash;&gt;-->
+<!--    <update id="deleteByProductId" >-->
+<!--        update product-->
+<!--        <set>-->
+<!--            <if test="deleted != 0 and productId != null and productId = ''">-->
+<!--                deleted = '1'-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <where>-->
+<!--            product_id = #{productId}-->
+<!--        </where>-->
+<!--    </update>-->
+
+
+<!--    &lt;!&ndash;根据product_id修改product信息&ndash;&gt;-->
+<!--    <update id="updateByProductId" parameterType="com.emall.entity.Product">-->
+<!--        update product set-->
+<!--        product_name=#{product.productName},product_price=#{product.productPrice},product_img=#{product.productImg},product_details=#{product.productDetails}-->
+<!--        <where>-->
+<!--            <if test="productId != null and aproductId != ''">-->
+<!--                product_id=#{product.productId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </update>-->
+
+    <!--  查询所有product信息  -->
+    <select id="getAllProduct" resultType="com.emall.entity.Product">
+        select * from `product`
+    </select>
+
+    <select id="guessYouLike" resultType="com.emall.common.vo.ProductCountVo">
+        select product.product_id, product_name, product_price, product_img, product_details, deleted, count from `product`
+        inner join (select sum(cart_count)as count ,product_id  from `order` group by product_id) as order_count
+        on `product`.product_id = `order_count`.product_id order by RAND() desc LIMIT 10
+    </select>
+
+    <!--用户将商品添至购物车-->
+    <insert id="insertIntoCart"  >
+        insert into cart (cart_id,product_id,user_id,cart_count)
+        values (#{product.cartId},#{product.productId},#{product.userId},#{product.cartCount})
+    </insert>
+
+
+    <!--查看商品销量（根据时间）这个时间咋弄？-->
+    <select id="selectCount" resultType="com.emall.common.vo.ProductCountVo">
+    select  sum(cart_count) as count ,product_id from `order`
+    where product_id = #{product.productId}
+    group by product_id
+    </select>
+
+    <select id="orderByPrice" resultType="com.emall.entity.Product">
+        select * from `product` order by product_price desc
+    </select>
+
+    <select id="orderBySales" resultType="com.emall.entity.Product">
+        select product.product_id, product_name, product_price, product_img, product_details, deleted, count from `product`
+                                                 inner join (select sum(cart_count)as count ,product_id  from `order` group by product_id) as order_count
+                                                  on `product`.product_id = `order_count`.product_id order by count desc LIMIT 10
+    </select>
+</mapper>

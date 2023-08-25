@@ -1,0 +1,21 @@
+{
+  "name": "adminX",
+  "version": "1.2.0",
+  "description": "adminX Admin",
+  "main": "mainscripts.bundle.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "keywords": [
+    "SaSS",
+    "Test"
+  ],
+  "author": "ThemeMakker",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-sass": "v4.0.0-alpha.6",
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-sass": "^1.2.0"
+  }
+}

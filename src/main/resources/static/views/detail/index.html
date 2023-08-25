@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>无标题文档</title>
+	<link rel="stylesheet" href="css/shouye.css">
+	<link rel="stylesheet" href="../../css/index.css">
+	<script src="https://lib.baomitu.com/jquery/3.6.0/jquery.js"></script>
+	<script src="js/modernizr-custom-v2.7.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var $miaobian = $('.Xcontent08>div');
+			var $huantu = $('.Xcontent06>img');
+			var $miaobian1 = $('.Xcontent26>div');
+			$miaobian.mousemove(function () { miaobian(this); });
+			$miaobian1.click(function () { miaobian1(this); });
+			function miaobian(thisMb) {
+				for (var i = 0; i < $miaobian.length; i++) {
+					$miaobian[i].style.borderColor = '#dedede';
+				}
+				thisMb.style.borderColor = '#cd2426';
+
+				$huantu[0].src = thisMb.children[0].src;
+			}
+			function miaobian1(thisMb1) {
+				for (var i = 0; i < $miaobian1.length; i++) {
+					$miaobian1[i].style.borderColor = '#dedede';
+				}
+				//		thisMb.style.borderColor = '#cd2426';
+				$miaobian.css('border-color', '#dedede');
+				thisMb1.style.borderColor = '#cd2426';
+				$huantu[0].src = thisMb1.children[0].src;
+			}
+			$(".Xcontent33").click(function () {
+				var value = parseInt($('.input').val()) + 1;
+				$('.input').val(value);
+			})
+
+			$(".Xcontent32").click(function () {
+				var num = $(".input").val()
+				if (num > 0) {
+					$(".input").val(num - 1);
+				}
+
+			})
+
+		})
+
+	</script>
+
+
+</head>
+
+<body>
+	<div class="Xcontent">
+		<div id="jd-denglu">
+			<div class="dingbu">
+				<div class="yzbj"> 运至： <span class="sss">北京&nbsp;</span>
+					<div class="eee"><img class="yinc" src="img/16.png"> </div>
+					<div id="asd">
+						<ul class="chengshi">
+							<li style=""><a class="yangshi" href="###">北京</a></li>
+							<li class="ddd"><a href="###">上海</a></li>
+							<li class="ddd"><a href="###">天津</a></li>
+							<li class="ddd"><a href="###">重庆</a></li>
+							<li class="ddd"><a href="###">河北</a></li>
+							<li class="ddd"><a href="###">山西</a></li>
+							<li class="ddd"><a href="###">河南</a></li>
+							<li class="ddd"><a href="###">辽宁</a></li>
+							<li class="ddd"><a href="###">吉林</a></li>
+							<li class="ddd"><a href="###">黑龙江</a></li>
+							<li class="ddd"><a href="###">内蒙古</a></li>
+							<li class="ddd"><a href="###">江苏</a></li>
+							<li class="ddd"><a href="###">山东</a></li>
+							<li class="ddd"><a href="###">安徽</a></li>
+							<li class="ddd"><a href="###">浙江</a></li>
+							<li class="ddd"><a href="###">福建</a></li>
+							<li class="ddd"><a href="###">湖北</a></li>
+							<li class="ddd"><a href="###">湖南</a></li>
+							<li class="ddd"><a href="###">广东</a></li>
+							<li class="ddd"><a href="###">广西</a></li>
+							<li class="ddd"><a href="###">江西</a></li>
+							<li class="ddd"><a href="###">四川</a></li>
+							<li class="ddd"><a href="###">海南</a></li>
+							<li class="ddd"><a href="###">贵州</a></li>
+							<li class="ddd"><a href="###">云南</a></li>
+							<li class="ddd"><a href="###">西藏</a></li>
+							<li class="ddd"><a href="###">陕西</a></li>
+							<li class="ddd"><a href="###">甘肃</a></li>
+							<li class="ddd"><a href="###">青海</a></li>
+							<li class="ddd"><a href="###">宁夏</a></li>
+							<li class="ddd"><a href="###">新疆</a></li>
+							<li class="ddd"><a href="###">台湾</a></li>
+							<li class="ddd"><a href="###">香港</a></li>
+							<li class="ddd"><a href="###">澳门</a></li>
+							<li class="ddd"><a href="###">钓鱼岛</a></li>
+							<li class="ddd"><a href="###">钓鱼岛</a></li>
+							<li class="ddd"><a href="###">海外</a></li>
+						</ul>
+						<em></em>
+					</div>
+				</div>
+				<ul class="yfd">
+					<li><a href="">你好,请登录</a></li>
+					<li><a href="">免费注册</a></li>
+					<li style="color:#ccc;">|</li>
+					<li><a href="">我的订单</a></li>
+					<li style="color:#ccc;">|</li>
+					<li id="kkk"><a href="">我的电商&nbsp;<img style="width:16px;height:14px;" id="" src="img/1.png"></a>
+						<div id="wdjd">
+							<em></em>
+							<div class="diyi">
+								<div class="wd"> <img src="img/16.jpg"></div>
+								<div class="jd"> <span><a href="###">你好,请登录</a></span> <span><a href="###">优惠券 |
+											消息</a></span> </div>
+							</div>
+							<div class="dier">
+								<div class="wen"> <span><a href="###">待处理订单</a></span> <span><a
+											href="###">咨询回复</a></span> <span><a href="###">降价商品</a></span> <span><a
+											href="###">返修退换货</a></span> </div>
+								<div class="zi"> <span><a href="###">我的关注</a></span> <span><a href="###">我的京豆</a></span>
+									<span><a href="###">我的理财</a></span> <span><a href="###">我的白条</a></span>
+								</div>
+							</div>
+					</li>
+					<li style="color:#ccc;">|</li>
+					<li><a href="">会员俱乐部</a></li>
+					<li style="color:#ccc;">|</li>
+					<li><a href="">企业频道</a></li>
+					<li style="color:#ccc;">|</li>
+					<li id="iii"><img style="width:10px;height:14px;" src="img/3.png"><a href="">&nbsp;手机电商</a><img
+							style="width:16px;height:14px;float: " src="img/4.png">
+						<div id="sjjd"> <img src="img/30.png"> <em></em> </div>
+					</li>
+					<li style="color:#ccc;">|</li>
+					<li id="ppp"><a href="">关注电商&nbsp;</a><img style="width:16px;height:14px;" src="img/5.png">
+						<div id="gzjd"> <img src="img/32.jpg"> <em></em> </div>
+					</li>
+					<li style="color:#ccc;">|</li>
+					<li id="ddd"><a href="">客户服务&nbsp;</a><img style="width:16px;height:14px;" src="img/6.png">
+						<div id="khfw"> <em></em>
+							<div class="magen"> <span>帮助中心</span> <span>售后服务</span>
+								<spam>在线客服</spam>
+								<span>意见建议</span> <span>客服邮箱</span>
+							</div>
+						</div>
+					</li>
+					<li style="color:#ccc;">|</li>
+					<li id="www"><a href="">网站导航&nbsp;</a><img style="width:16px;height:14px;" src="img/7.png">
+						<div id="wzdh"> <em></em>
+							<dl class="tszt">
+								<dt
+									style="font-size:14px;font-weight:700;margin-bottom:6px;color:#666;margin-left: 17px;margin-top: 10px">
+									特色主题</dt>
+								<dd id="mg">
+									<div class="tim"><a href="">品牌街</a></div>
+									<div class="tim"><a href="">天天低价</a></div>
+									<div class="tim"><a href="">好东西</a></div>
+									<div class="tim"><a href="">电商预售</a></div>
+									<div class="tim"><a href="">金融精选</a></div>
+									<div class="tim"><a href="">电商首发</a></div>
+									<div class="tim"><a href="">今日团购</a></div>
+									<div class="tim"><a href="">优惠券</a></div>
+									<div class="tim"><a href="">闪购</a></div>
+									<div class="tim"><a href="">电商会员</a></div>
+									<div class="tim"><a href="">电商京选</a></div>
+									<div class="tim"><a href="">定期选</a></div>
+									<div class="tim"><a href="">装机大师</a></div>
+									<div class="tim"><a href="">搭配购</a></div>
+									<div class="tim"><a href="">电商使用</a></div>
+									<div class="tim"><a href="">礼品购</a></div>
+									<div class="tim"><a href="">智能馆</a></div>
+									<div class="tim"><a href="">玩逼格</a></div>
+								</dd>
+							</dl>
+							<dl id="hypd">
+								<dt
+									style="font-size:14px;font-weight:700;margin-bottom:6px;color:#666;margin-left: 17px;margin-top: -4px">
+									行业频道</dt>
+								<dd id="hg">
+									<div class="tim"><a href="">服装城</a></div>
+									<div class="tim"><a href="">家用电器</a></div>
+									<div class="tim"><a href="">电脑办公</a></div>
+									<div class="tim"><a href="">手机</a></div>
+									<div class="tim"><a href="">美妆馆</a></div>
+									<div class="tim"><a href="">食品</a></div>
+									<div class="tim"><a href="">数码</a></div>
+									<div class="tim"><a href="">母婴</a></div>
+									<div class="tim"><a href="">家装城</a></div>
+									<div class="tim"><a href="">运动户外</a></div>
+									<div class="tim"><a href="">整车</a></div>
+									<div class="tim"><a href="">图书</a></div>
+								</dd>
+							</dl>
+							<dl id="shfw">
+								<dt
+									style="font-size:14px;font-weight:700;margin-bottom:6px;color:#666;margin-left: 17px;margin-top: -4px">
+									生活服务</dt>
+								<dd id="hg">
+									<div class="tim"><a href="">电商众筹</a></div>
+									<div class="tim"><a href="">白条</a></div>
+									<div class="tim"><a href="">电商钱包</a></div>
+									<div class="tim"><a href="">电商小金库</div>
+									<div class="tim"><a href="">理财</a></div>
+									<div class="tim"><a href="">话费</a></div>
+									<div class="tim"><a href="">旅行</a></div>
+									<div class="tim"><a href="">彩票</a></div>
+									<div class="tim"><a href="">游戏</a></div>
+									<div class="tim"><a href="">机票</a></div>
+									<div class="tim"><a href="">电影票</a></div>
+									<div class="tim"><a href="">水电煤</a></div>
+									<div class="tim"><a href="">电商到家</a></div>
+								</dd>
+							</dl>
+							<dl id="gdjx">
+								<dt
+									style="font-size:14px;font-weight:700;margin-bottom:6px;color:#666;margin-left: 17px;margin-top: -4px">
+									更多精选</dt>
+								<dd id="kg">
+									<div class="tim"><a href="">电商社区</a></div>
+									<div class="tim"><a href="">电商通信</a></div>
+									<div class="tim"><a href="">在线读书</a></div>
+									<div class="tim"><a href="">电商E书</div>
+									<div class="tim"><a href="">智能社区</a></div>
+									<div class="tim"><a href="">游戏社区</a></div>
+									<div class="tim"><a href="">京友邦</a></div>
+									<div class="tim"><a href="">卖家入驻</a></div>
+									<div class="tim"><a href="">企业采购</a></div>
+									<div class="tim"><a href="">服务市场</a></div>
+									<div class="tim"><a href="">乡村招募</a></div>
+									<div class="tim"><a href="">校园加盟</a></div>
+									<div class="tim"><a href="">办公生活馆</a></div>
+									<div class="tim"><a href="">知识产权维权</a></div>
+									<div class="tim"><a href="">English site</a></div>
+								</dd>
+							</dl>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="Xcontent01">
+
+			<div class="Xcontent06"><img src="images/shangpinxiangqing/X1.png" id="content4"></div>
+			<ol class="Xcontent13">
+				<div class="Xcontent14"><a href="#">
+						<p id="content1">新物品</p>
+					</a></div>
+				<div class="Xcontent15"><img src="images/shangpinxiangqing/X11.png"></div>
+				<div class="Xcontent16">
+					<p id="content2">充电5分钟，温暖2小时</p>
+				</div>
+				<div class="Xcontent17">
+					<p class="Xcontent18">售价</p>
+					<p class="Xcontent19">￥<span id="content3">69.00</span></p>
+					<div class="Xcontent20">
+						<p class="Xcontent21">促销</p>
+						<img src="images/shangpinxiangqing/X12.png">
+						<p class="Xcontent22">领610元新年礼券，满再赠好礼</p>
+					</div>
+					<div class="Xcontent23">
+						<p class="Xcontent24">服务</p>
+						<p class="Xcontent25">30天无忧退货&nbsp;&nbsp;&nbsp;&nbsp; 48小时快速退款 &nbsp;&nbsp;&nbsp;&nbsp; 满88元免邮
+						</p>
+					</div>
+
+				</div>
+				<div class="Xcontent26" hidden>
+					<p class="Xcontent27">颜色</p>
+					<div class="Xcontent28"><img src="images/shangpinxiangqing/X14.png"></div>
+					<div class="Xcontent29"><img src="images/shangpinxiangqing/X1.png"></div>
+				</div>
+				<div class="Xcontent30">
+					<p class="Xcontent31">数量</p>
+					<div class="Xcontent32"><img src="images/shangpinxiangqing/X15.png"></div>
+					<form>
+						<input class="input" value="1">
+					</form>
+					<div class="Xcontent33"><img src="images/shangpinxiangqing/16.png"></div>
+				</div>
+				<div class="Xcontent34"><a href="#" id="buy"><img src="images/shangpinxiangqing/X17.png"></a></div>
+				<div class="Xcontent35"><a href="#" id="addCart"><img src="images/shangpinxiangqing/X18.png"></a></div>
+
+			</ol>
+		</ul>
+
+	</div>
+</body>
+<script>
+	$(function(){
+		var $url = window.location.href;
+		var $id = $url.split("?id=")[1];
+		var $product = null;
+		$.post("http://localhost:8080/product/detail/"+$id, function (res) {
+
+			// console.log(res.data);
+			// var html = "";
+			// 取出返回的data集合List
+			// for (var i = 0; i < res.data.length; i++) {
+			// 	html += "<tr>" + "<td>" + res.data[i].productName + "</td>" + "</tr>"
+			// }
+			var $data = res.data;
+			$("#content1").html($data.productName);
+			$("#content2").html($data.productDetails);
+			$("#content3").html($data.productPrice);
+			$("#content4").attr('src', $data.productImg);
+
+			var $product = res.data;
+		});
+
+		$("#buy").on('click', function() {
+			$.post({
+				url: "http://localhost:8888/orders/order2/",
+				data: $product,
+				success: function (res, status) {
+					console.log(res.data);
+				}
+			});
+		})
+	});
+</script>
+
+</html>

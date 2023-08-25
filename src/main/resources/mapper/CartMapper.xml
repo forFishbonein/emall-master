@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emall.mapper.CartMapper">
+
+<!--    &lt;!&ndash;  查询所有cart信息  &ndash;&gt;-->
+<!--    <select id="getAllCart" resultType="com.emall.entity.Cart">-->
+<!--        select * from cart-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据cart_id获取cart信息&ndash;&gt;-->
+<!--    <select id="getByCartId" resultType="com.emall.entity.Cart">-->
+<!--        select * from cart-->
+<!--        <where>-->
+<!--            <if test="cartId != null and cartId != ''">-->
+<!--                cart_id = #{cart.cartId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据product_id获取cart信息&ndash;&gt;-->
+<!--    <select id="getByProductId" resultType="com.emall.entity.Cart">-->
+<!--        select * from cart-->
+<!--        <where>-->
+<!--            <if test="productId != null and productId != ''">-->
+<!--                product_id = #{cart.productId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;根据user_id获取cart信息&ndash;&gt;-->
+<!--    <select id="getByUserId" resultType="com.emall.entity.Cart">-->
+<!--        select * from cart-->
+<!--        <where>-->
+<!--            <if test="userId != null and userId != ''">-->
+<!--                user_id = #{cart.userId}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash;向cart表中添加新的数据&ndash;&gt;-->
+<!--    <insert id="insertCart" parameterType="com.emall.entity.Cart">-->
+<!--        insert into cart(cart_id, product_id, user_id, cart_count)-->
+<!--        values(#{cart.cartId},#{cart.productId},#{cart.userId},#{cart.cartCount})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash;根据cart_id删除cart信息&ndash;&gt;-->
+<!--    <update id="deleteByCartId" >-->
+<!--        update cart-->
+<!--        <set>-->
+<!--            <if test="deleted != 0 and cartId != null and cartId = ''">-->
+<!--                deleted = '1'-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <where>-->
+<!--            cart_id = #{cart.cartId}-->
+<!--        </where>-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash;根据cart_id修改cart_count&ndash;&gt;-->
+<!--    <update id="updateCartCount">-->
+<!--        update cart-->
+<!--        <set>-->
+<!--            <if test="cartId != null and cartId != ''">-->
+<!--            cart_count = #{cart.cartCount}-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        <where>-->
+<!--            cart_id = #{cart.cartId}-->
+<!--        </where>-->
+<!--    </update>-->
+
+</mapper>

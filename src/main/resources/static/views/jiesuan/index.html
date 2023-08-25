@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery购物车</title>
+</head>
+<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<!--&lt;!&ndash; 引入样式 &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+<!--&lt;!&ndash; 引入组件库 &ndash;&gt;-->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<style lang="scss">
+    .shopping-car-container {
+        padding: 50px 40px;
+    }
+
+    .shopping-car-container .car-headers-menu {
+        border-bottom: 1px solid #f5f5f5;
+        padding: 0 15px;
+    }
+
+    .shopping-car-container .panel-body {
+        padding: 15px 0;
+    }
+
+    #checkAll {
+        vertical-align: text-bottom;
+    }
+
+    .shopping-car-container .car-menu {
+        text-align: center;
+    }
+    /*
+     商品区
+     * */
+
+    .shopping-car-container .goods-content {
+        margin-top: 15px;
+    }
+
+    .shopping-car-container .goods-content .goods-item {
+        margin-top: 20px;
+    }
+
+    .shopping-car-container .goods-content .goods-item .car-goods-info {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .shopping-car-container .goods-content .goods-item .goods-image-column img,
+    .shopping-car-container .goods-content .goods-item .goods-image-column span {
+        display: block;
+        float: left;
+    }
+
+    .shopping-car-container .goods-content .goods-item .goods-image-column span {
+        width: calc(100% - 100px);
+        box-sizing: border-box;
+        text-indent: 2rem;
+        line-height: 25px;
+        padding: 10px;
+    }
+
+    .goods-price {
+        color: red;
+        font-weight: bolder;
+    }
+
+    .form-control {
+        text-align: center;
+    }
+
+    .single-total {
+        color: red;
+        font-weight: bold;
+    }
+
+    .goods-params {
+        color: darkgray;
+    }
+
+    .bottom-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bottom-menu #checkAllBottom {
+        vertical-align: text-bottom;
+    }
+
+    #deleteMulty {
+        color: cornflowerblue;
+        cursor: pointer;
+        vertical-align: text-bottom;
+    }
+
+    .bottom-menu-include {
+        background: #e5e5e5;
+    }
+
+    #selectGoodsCount {
+        color: orangered;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    #selectGoodsMoney {
+        color: orangered;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .panel-default .submitData {
+        background: orangered;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        font-weight: bolder;
+        height: 58px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .panel-default .submitDis {
+        background: #B0B0B0;
+        cursor: no-drop;
+    }
+
+    .shopping-car-container .panel-default {
+        position: relative;
+    }
+    .text{
+        margin-left: 50px;
+    }
+    .input-tip{
+        outline: none;
+        width: 100px;
+        height: 25px;
+    }
+    .row-receiver{
+        margin-top: 30px;
+        text-align: center;
+    }
+</style>
+
+<body>
+<div class="row-receiver">
+    <span class="text"> 收货地址：</span>
+    <label>
+        <select class="input-tip">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </label>
+    <button type="button" class="btn btn-danger item-delete" style="margin-left: 20px;outline: none;">确定</button>
+</div>
+
+<div class="shopping-car-container">
+    <div class="car-headers-menu">
+        <div class="row">
+            <div class="col-md-1 car-menu">
+            </div>
+            <div class="col-md-3 car-menu">商品信息</div>
+            <div class="col-md-3 car-menu">商品参数</div>
+            <div class="col-md-1 car-menu">单价</div>
+            <div class="col-md-1 car-menu">数量</div>
+            <div class="col-md-1 car-menu">金额</div>
+        </div>
+    </div>
+    <div class="goods-content">
+        <!--goods display-->
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body bottom-menu-include">
+            <div class="col-md-1 check-all-bottom bottom-menu">
+                <label>
+                </label>
+            </div>
+            <div class="col-md-1 bottom-menu">
+
+            </div>
+            <div class="col-md-6 bottom-menu">
+
+            </div>
+            <div class="col-md-2 bottom-menu">
+            </div>
+            <div class="col-md-1 bottom-menu">
+                <span>合计：<span id="selectGoodsMoney">0.00</span></span>
+            </div>
+            <div class="col-md-1 bottom-menu submitData submitDis">
+                付款
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script type="text/javascript">
+    var goodsList = [{
+        id: 1234567876,
+        imgUrl: 'img/3.jpg',
+        goodsInfo: '号地块健身房回复的科技示范户快速坚实的看了看大家发快递了很费劲的开始放假',
+        goodsParams: '四季度后付款的酸辣粉',
+        price: 199,
+        goodsCount: 1,
+        singleGoodsMoney: 199
+    },
+        {
+            id: 145564876,
+            imgUrl: 'img/4.jpg',
+            goodsInfo: '号地块健身房回复的科技示范户快速坚实的看了看大家发快递了很费劲的开始放假',
+            goodsParams: '四季度后付款的酸辣粉',
+            price: 299,
+            goodsCount: 2,
+            singleGoodsMoney: 598
+        },
+        {
+            id: 1234564876,
+            imgUrl: 'img/5.jpg',
+            goodsInfo: '号地块健身房回复的科技示范户快速坚实的看了看大家发快递了很费劲的开始放假',
+            goodsParams: '块电费简单来说记录',
+            price: 399,
+            goodsCount: 1,
+            singleGoodsMoney: 399
+        },
+        {
+            id: 12345623876,
+            imgUrl: 'img/6.jpg',
+            goodsInfo: '号地块健身房回复的科技示范户快速坚实的看了看大家发快递了很费劲的开始放假',
+            goodsParams: '块电费简单来说记录',
+            price: 399,
+            goodsCount: 1,
+            singleGoodsMoney: 399
+        }
+    ]
+    var deleteGoods = null
+    loadGoods()
+
+    function loadGoods() {
+        $.each(goodsList, function(i, item) {
+            var goodsHtml = '<div class="goods-item">' +
+                '<div class="panel panel-default">' +
+                '<div class="panel-body">' +
+                '<div class="col-md-1 car-goods-info">' +
+                '</div>' +
+                '<div class="col-md-3 car-goods-info goods-image-column">' +
+                '<img class="goods-image" src="' + item.imgUrl + '" style="width: 100px; height: 100px;" />' +
+                '<span id="goods-info">' +
+                item.goodsInfo +
+                '</span>' +
+                '</div>' +
+                '<div class="col-md-3 car-goods-info goods-params">' + item.goodsParams + '</div>' +
+                '<div class="col-md-1 car-goods-info goods-price"><span>￥</span><span class="single-price">' + item.price + '</span></div>' +
+                '<div class="col-md-1 car-goods-info goods-counts">' +
+                '<div class="input-group">' +
+                '<div class="input-group-btn">'+
+                '</div>' +
+                 + item.goodsCount +
+                '</div>' +
+                '</div>' +
+                '<div class="col-md-1 car-goods-info goods-money-count"><span>￥</span><span class="single-total">' + item.singleGoodsMoney + '</span></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            $('.goods-content').append(goodsHtml)
+        })
+    }
+</script>
+
+</html>

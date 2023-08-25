@@ -1,0 +1,19 @@
+{
+  "name": "adminX",
+  "version": "1.2.0",
+  "description": "adminX Dashboard",
+  "main": "js/admin.js",
+  "authors": [
+    "ThemeMakker"
+  ],
+  "license": "",
+  "homepage": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
